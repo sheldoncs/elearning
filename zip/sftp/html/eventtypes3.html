@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?eventtypes3.html"; }
+else { parent.quicksync('a2.5.3.2'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Event types</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Event types</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="listeningforevents3.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="uploadingfiles.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>The <span class="f_CodeExample">Scp</span> class is the source for several SCP related events.&nbsp; All events may be captured by registering your class as a listener by implementing the <span class="f_CodeExample">ScpEventListener</span> class.&nbsp; These events are described below.</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" bgcolor="#ffffff" border="0" style="background-color: #ffffff; border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Event</span></p>
+</td>
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Description</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_CodeExample">ScpConnectedEvent</span></p>
+</td>
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">ScpConnectedEvent</span><span class="f_Notetext"> is published once a connection to the server has been established. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_CodeExample">ScpDisconnectedEvent</span></p>
+</td>
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">ScpDisconnectedEvent</span><span class="f_Notetext"> is published once the connection to the server has been released. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_CodeExample">ScpFileDownloadEvent</span></p>
+</td>
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">ScpFileDownloadEvent</span><span class="f_Notetext"> is published for each file downloaded from the server. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_CodeExample">ScpFileUploadEvent</span></p>
+</td>
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">ScpFileUploadEvent</span><span class="f_Notetext"> is published for each file uploaded to the server. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_CodeExample">ScpTransferProgressEvent</span></p>
+</td>
+<td valign="top" width="317px" style="width:317px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">ScpTransferProgressEvent</span><span class="f_Notetext"> is published one or more times during the transfer of files to / from the server. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?transferringadirectory.html"; }
+else { parent.quicksync('a2.3.5'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Transferring a directory</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Transferring a directory</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="transferringafile.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="transferringmultiplefiles.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>Once you have established a connection to the source and destination FTP servers you may transfer an entire directory recursively using the <span class="f_CourierFixed">Fxp#transferDir</span> method.&nbsp; If you wish to change the source or destination directory you can do so using the <span class="f_CourierFixed">Ftp#setDir</span> method for the desired <span class="f_CourierFixed">Ftp</span> instance prior to invoking the <span class="f_CourierFixed">Fxp#transferDir</span> method.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// set source directory of Ftp instance</span></p>
+<p><span style="font-family: 'Courier New';">source.setDir(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;/src&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// set destination directory of Ftp instance</span></p>
+<p><span style="font-family: 'Courier New';">destination.setDir(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;/dest&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// create new Fxp instance</span></p>
+<p><span style="font-family: 'Courier New';">Fxp fxp = </span><span style="font-family: 'Courier New'; color: #000080;">new</span><span style="font-family: 'Courier New';"> Fxp();</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// transfer directory &quot;images&quot; from source to destination</span></p>
+<p><span style="font-family: 'Courier New';">fxp.transferDir(source,destination,</span><span style="font-family: 'Courier New'; color: #000080;">&quot;images&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">See also</span></p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 13px;"><a href="establishingaconnection2.html">Establishing a connection</a></p>
+<p style="margin: 0px 0px 0px 13px;"><a href="transferringafile.html">Transferring a file</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</body>
+</html>

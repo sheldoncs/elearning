@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?definingandusingvariables.html"; }
+else { parent.quicksync('a2.7.7'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Defining and using variables</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Defining and using variables</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="relativev_s_absolutepaths.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="promptinguserfordata.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>Variables may be defined in FTCL at the command line or in a valid FTCL script file. Once a variable is defined it is then accessible within the FTCL script for use in other commands.</p>
+<p>&nbsp;</p>
+<p>Variables may be defined at the command line using the following syntax:</p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">-&lt;variablename&gt; &lt;value&gt;</span></p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">java -jar sftp.jar -f scriptfile.txt -filter '*.txt'</span></p>
+<p>&nbsp;</p>
+<p>In the above example a variable named <span class="f_CodeExample">filter</span> is defined with a value of <span class="f_CodeExample">'*.txt'</span>. </p>
+<p>&nbsp;</p>
+<p><span class="f_Note">Note</span></p>
+<p>&nbsp;</p>
+<p style="margin: 0px 48px 0px 48px;"><span class="f_Notetext">In the above example the value is quoted with single quotes. This is to prevent your operating system shell from performing command line expansion of the regular expression *.txt. Failure to surround regular expressions with single quotes will result in undesired effects. </span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Defining variables in scripts</span></p>
+<p>&nbsp;</p>
+<p>You my define variables in scripts using the <span class="f_CodeExample"><a href="scriptingcommands.html#set">set</a></span> command.&nbsp; </p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Referencing variables in scripts</span></p>
+<p>&nbsp;</p>
+<p>Variables defined at the command line or in scripts may be referenced using the following syntax:</p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">${&lt;variablename&gt;}</span></p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Example">&nbsp;</span></p>
+<p>Below is an example of the command issued at the command line and the script contents found in scriptfile.txt.</p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">java -jar sftp.jar -f scriptfile.txt -filter '*.txt'</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">/**</span></p>
+<p><span class="f_CodeExample">* This example demonstrates connecting to a server, performing a directory</span></p>
+<p><span class="f_CodeExample">* listing and then disconnecting.</span></p>
+<p><span class="f_CodeExample">*/</span></p>
+<p><span class="f_CodeExample">&nbsp;</span></p>
+<p><span class="f_CodeExample">set hostname &quot;ftp.myserver.com&quot;</span></p>
+<p><span class="f_CodeExample">set username &quot;jsmith&quot;</span></p>
+<p><span class="f_CodeExample">set password &quot;secret&quot;</span></p>
+<p><span class="f_CodeExample">connect</span></p>
+<p><span class="f_CodeExample">&nbsp;</span></p>
+<p><span class="f_CodeExample">// perform directory listing using filter supplied at command line </span></p>
+<p><span class="f_CodeExample">dir &quot;${filter}&quot; </span></p>
+<p><span class="f_CodeExample">&nbsp;</span></p>
+<p><span class="f_CodeExample">disconnect</span></p>
+
+
+</body>
+</html>

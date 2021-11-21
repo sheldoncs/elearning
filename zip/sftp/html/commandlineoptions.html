@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?commandlineoptions.html"; }
+else { parent.quicksync('a2.7.3'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Command line options</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Command line options</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="commandlineusage.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="scriptingcommands.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>The following options may be used at the command line when invoking File Transfer Command Line.</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample" style="font-weight: bold;">-h</span><span class="f_Notetext"> </span><span class="f_CodeExample">&lt;hostname&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specified the hostname of the remote server. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;hostname&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a valid hostname or IP address </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">-h 192.168.10.2</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample" style="font-weight: bold;">-u</span><span class="f_Notetext"> </span><span class="f_CodeExample">&lt;username&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies the username to use when logging into the remote server. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;username&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a valid username on remote server</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">-u jsmith</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample" style="font-weight: bold;">-p</span><span class="f_Notetext"> </span><span class="f_CodeExample">&lt;password&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies the password to use when logging into the remote server. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;password&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a valid password for specified username on remote server </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">-p secret</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample" style="font-weight: bold;">-s</span><span class="f_Notetext"> </span><span class="f_CodeExample">&lt;boolean&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies that a secure SFTP/SSH connection be used. Telnet connection is used by default. Requires that SSH version 2.0 or above be installed on remote server and SFTP be enabled.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;boolean&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">true, false </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">-s true</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample" style="font-weight: bold;">-l</span><span class="f_Notetext"> </span><span class="f_CodeExample">&lt;file&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies the path of the log file to write debugging information to. By default all debugging information is sent to the console.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;file&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a valid relative or absolute path on local machine</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">-l log.txt</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample" style="font-weight: bold;">-k</span><span class="f_Notetext"> </span><span class="f_CodeExample">&lt;file&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies the path of the private key file to use when authenticating with SSH server. Valid for use in SSH connections only. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;file&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a valid relative or absolute path on local machine</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">-k c:/ssh/keys/id_dsa</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample" style="font-weight: bold;">-d</span><span class="f_Notetext"> </span><span class="f_CodeExample">&lt;boolean&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies whether debugging is enabled or disabled. By default debugging is enabled and all debugging information is sent to the console.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;boolean&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">true, false </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">-d false</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample" style="font-weight: bold;">-t</span><span class="f_Notetext"> </span><span class="f_CodeExample">&lt;seconds&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Sets the maximum timeout used when establishing a connection, sending data or receiving data. If timeout is exceeded script will abort. Default value is 60 seconds. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;seconds&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">the maximum number of seconds to wait </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">-t 30</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample" style="font-weight: bold;">-z</span><span class="f_Notetext"> </span><span class="f_CodeExample">&lt;port&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies the port of the remote server. The default ports for FTP and SFTP protocols are 21 and 22 respectively.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;port&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">A valid integer between 1-65535</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">-z 2021</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</body>
+</html>

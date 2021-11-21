@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?overview5.html"; }
+else { parent.quicksync('a2.3.1'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Overview</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Overview</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="retrievingfiletimestampinfo_2.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="requirements.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>FXP is an extension to the FTP protocol which allows for server to server transfers without actually acquiring the files yourself.&nbsp; For example, imagine that you wish transfer files from server A to server B using the FTP protocol from client C.&nbsp; Normally when using the FTP protocol you would have to do the following:</p>
+<p style="text-indent: -30px; margin: 0px 0px 0px 30px;">&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27">1.</td><td>Establish FTP client connection from client C to server A.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27">2.</td><td>Download files from server A to client C.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="27">3.</td><td>Establish FTP client connection from client C to server B.</td></tr></table></div><div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table border="0" cellpadding="0" cellspacing="0" style="line-height: normal;"><tr style="vertical-align:baseline" valign="baseline"><td width="30">4.</td><td>Upload files from client C to server B.</td></tr></table></div><p><span style="font-size: 5pt;">&nbsp;</span></p>
+<p>As you can see this process is an inefficient use of bandwidth as it requires that a file be transferred twice in order to get to it's final destination.&nbsp; This can be especially problematic when the client has a slow connection such as a dialup connection.&nbsp; FXP solves this problem by allowing the client to issue a series of commands which transfers the files directly from server A to server B without first acquiring the files by client C.</p>
+<p>&nbsp;</p>
+<p>This section is divided into the following topics.</p>
+<p>&nbsp;</p>
+<p><a href="establishingaconnection2.html">Establishing a connection</a></p>
+<p><a href="transferringafile.html">Transferring a file</a></p>
+<p><a href="transferringadirectory.html">Transferring a directory</a></p>
+<p><a href="transferringmultiplefiles.html">Transferring multiple files</a></p>
+<p><a href="releasingaconnection.html">Releasing a connection</a></p>
+<p><a href="listeningforevents2.html">Capturing FXP related events</a></p>
+
+
+</body>
+</html>

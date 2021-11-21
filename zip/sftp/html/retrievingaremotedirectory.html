@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?retrievingaremotedirectory.html"; }
+else { parent.quicksync('a2.1.5.1'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Retrieving a remote directory listing</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Retrieving a remote directory listing</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="settingyourremotedirectoryftp.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="retrievingalocaldirectoryl.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p><span style="font-weight: bold;">Getting a directory listing as a String</span></p>
+<p>&nbsp;</p>
+<p>To get a directory listing returned as a string you may use the <span class="f_CodeExample">Ftp#getDirListingAsString</span> method.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// get directory listing as a string</span></p>
+<p><span style="font-family: 'Courier New';">String dirListing = ftp.getDirListingAsString(); </span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Getting a directory listing as an Enumeration</span></p>
+<p>&nbsp;</p>
+<p>In some cases you will want to evaluate the entries returned in a directory listing. In this case you will want to use the <span class="f_CodeExample">Ftp#getDirListing</span> method. This method returns a <span class="f_CodeExample">java.util.Enumeration</span> of <span class="f_CodeExample">FtpFile</span>. Each <span class="f_CodeExample">FtpFile</span> instance represents a read-only entry in the directory listing and may be queried for additional information.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// get directory listing</span></p>
+<p><span style="font-family: 'Courier New';">Enumeration listing = ftp.getDirListing();</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// enumerate thru listing printing filename for each entry</span></p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">while</span><span style="font-family: 'Courier New';">(listing.hasMoreElements()) {</span></p>
+<p><span style="font-family: 'Courier New';">  FtpFile file = (FtpFile)listing.nextElement();</span></p>
+<p><span style="font-family: 'Courier New';">  System.out.println(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Filename: &quot;</span><span style="font-family: 'Courier New';"> + file.getFilename());</span></p>
+<p><span style="font-family: 'Courier New';">}</span></p>
+<p><span style="font-size: 8pt; font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-weight: bold;">See also</span> </p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 13px;"><a href="settingyourremotedirectoryftp.html">Setting your remote directory</a></p>
+
+
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?introhistory.html"; }
+else { parent.quicksync('a1.8'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Version history</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Version history</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="introsupport.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="overview2.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>The following changes have been incorporated.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 7.4.3</span></p>
+<p>Feb. 28, 2008</p>
+<p>&nbsp;</p>
+<p>Bug Fix: Fixed issue with handling exceptions in response to client NLST command in <span class="f_CourierFixed">Ftps</span> class.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 7.4.2</span></p>
+<p>Jan. 28, 2008</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added <span class="f_CourierFixed">set lineterm</span> command to FTCL language to allow setting of remote host line termination when transferring files in ASCII mode to SFTP servers that do not support ASCII transfers.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 7.4.1</span></p>
+<p>Jan. 8, 2008</p>
+<p>&nbsp;</p>
+<p>Bug Fix: Fixed issue with <span class="f_CourierFixed">TimedSocket</span> class experienced in JDK 1.5 and above on some Solaris and Linux platforms.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 7.4.0</span></p>
+<p>Dec. 31, 2007</p>
+<p>&nbsp;</p>
+<p>Enhancement: Improved timeout support in all classes that support connection timeouts.</p>
+<p>Enhancement: Added <span class="f_CourierFixed">setSendBufferSize</span> and <span class="f_CourierFixed">setReceiveBufferSize</span> methods to <span class="f_CourierFixed">Ftp</span>, <span class="f_CourierFixed">Sftp</span> and <span class="f_CourierFixed">Scp</span> classes.</p>
+<p>Enhancement: Added support for MFMT and MFCT commands in <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 7.3.0</span></p>
+<p>Oct. 22, 2007</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added HTTP proxy support.</p>
+<p>Enhancement: Updated proxy support so that proxy settings are no longer global to the JVM.</p>
+<p>Enhancement: Improved performance for FTP ASCII transfers.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 7.2.0</span></p>
+<p>Aug. 22, 2007</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added MODE Z compression support to FTP/S protocols.&nbsp; See <span class="f_CourierFixed">Ftp.setCompression</span> and <span class="f_CourierFixed">Ftps.setCompression</span> methods.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 7.1.1</span></p>
+<p>Aug. 10, 2007</p>
+<p>&nbsp;</p>
+<p>Enhancement: Improved performance of small file transfers in <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 7.1</span></p>
+<p>Jul. 26, 2007</p>
+<p>&nbsp;</p>
+<p>Enhancement: Improved performance of file transfer in <span class="f_CourierFixed">Sftp</span> class.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 7.0.2</span></p>
+<p>Jun. 8, 2007</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added checks to upload and download methods to check for <span class="f_CourierFixed">null</span> filenames.</p>
+<p>Bug Fix: Fixed issue in <span class="f_CourierFixed">Ftps </span>class where when using implicit SSL <span class="f_CourierFixed">FtpsCertificateVerifier</span> did not work correctly.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 7.0.1</span></p>
+<p>May 28, 2007</p>
+<p>&nbsp;</p>
+<p>Enhancement: Improved support for STOU command in <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes.</p>
+<p>Enhancement: Improved JavaDoc for <span class="f_CourierFixed">Sftp</span> class.</p>
+<p>Bug Fix: Fixed issue in <span class="f_CourierFixed">Ftps</span> class where <span class="f_CourierFixed">FtpsCertificateVerifier</span> instance was referenced as static variable when it should have been an instance variable.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 7.0</span></p>
+<p>May 1, 2007</p>
+<p>&nbsp;</p>
+<p>Enhancement: Updated various methods in <span class="f_CourierFixed">Ftp</span>, <span class="f_CourierFixed">Ftps</span> and <span class="f_CourierFixed">Sftp</span> classes which accept a file filter e.g. <span class="f_CourierFixed">mupload</span>, <span class="f_CourierFixed">mdownload</span> etc. to provide true regular expression support.</p>
+<p>Enhancement: Added <span class="f_CourierFixed">setNATAddess</span> method to <span class="f_CourierFixed">Ftp</span>, <span class="f_CourierFixed">Ftps</span>, <span class="f_CourierFixed">FtpTransfer</span> and <span class="f_CourierFixed">FtpsTransfer</span> classes for supporting NAT connections.</p>
+<p>Enhancement: Added <span class="f_CourierFixed">uploadDir</span> and <span class="f_CourierFixed">downloadDir</span> methods to all classes along with <span class="f_CourierFixed">retryLimit</span> parameter that will automatically retry transfer if failed.</p>
+<p>Enhancement: Added <span class="f_CourierFixed">mdelete</span> method to support mass deletion of files matching a regular expression.</p>
+<p>Enhancement: Added <span class="f_CourierFixed">setErrorOnSizeCommand </span>method to <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes to determine whether exception should be thrown if server does not support SIZE command.</p>
+<p>Enhancement: Added additional constructor to <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes to support servers that require sending account information using ACCT command.</p>
+<p>Enhancement: Added <span class="f_CourierFixed">setUseEPSV</span> method to <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes to support sending of EPSV command to servers that support it.</p>
+<p>Enhancement: Added <span class="f_CourierFixed">setContextAlgorithm</span>, <span class="f_CourierFixed">setContextAlgorithmProvider</span>, <span class="f_CourierFixed">setContextProtocol, setContextProtocolProvider and setKeystoreProvider</span> methods for controlling what X509 algorithim, TLS protocol and security providers are used in <span class="f_CourierFixed">Ftps</span> class.</p>
+<p>Enhancement: Added <span class="f_CourierFixed">setEnabledCiphers</span> method to <span class="f_CourierFixed">Ftps</span> class allowing users to specify what ciphers may be used in SSL communications.</p>
+<p>Enhancement: Tested <span class="f_CourierFixed">Ftps</span> class with IBM JDK for FIPS compliance when using.</p>
+<p>Enhancement: Removed delay found between authentication requests in SFTP protocol.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 6.2</span></p>
+<p>December 14, 2006</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added new <span class="f_CourierFixed">uploadDir</span> method to <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes that performs upload with optional retry limit and checksum verification.</p>
+<p>Bug Fix: Fixed ASCII file transfer performance issue in <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 6.1</span></p>
+<p>November 8, 2006</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added relative path support to <span class="f_CourierFixed">Sftp </span>and <span class="f_CourierFixed">Scp</span> classes.</p>
+<p>Enhancement: Added <span class="f_CourierFixed">Sftp.getInputStream</span> and <span class="f_CourierFixed">Sftp.getOutputStream</span> methods.</p>
+<p>Bug Fix: Fixed issue experienced in <span class="f_CourierFixed">Ftps</span> class when reading empty directories or downloading empty files on some servers.</p>
+<p>Bug Fix: Fixed issue experienced in using <span class="f_CourierFixed">Ftp.getInputStream </span>and <span class="f_CourierFixed">Ftp.getOutputStream</span> methods.</p>
+<p>Bug Fix: Fixed issue in order to handle servers that return Windows_NT as system type but return directory listing in UNIX format.</p>
+<p>Bug Fix: Fixed issue in <span class="f_CourierFixed">Sftp</span> class for deleting directories recursively.</p>
+<p>Bug Fix: Fixed issue in parsing results returned from servers that support MLSD command.</p>
+<p>Bug Fix: Fixed issue experienced in parsing remote address returned by some servers in response to initiating a passive transfer.</p>
+<p>Bug Fix: Fixed memory issue experienced in FTP/S transfers when using ASCII mode.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 6.0.1</span></p>
+<p>September 15, 2006</p>
+<p>&nbsp;</p>
+<p>Enhancement: Improved error handling in download method of <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes.</p>
+<p>Bug Fix: Fixed issue with non-passive transfers in <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 6.0</span></p>
+<p>August 21, 2006</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added ability to specify whether passive connection should occur before or after sending command for retrieving passive data.&nbsp; See <span class="f_CourierFixed">setConnectBeforeCommand</span> method in <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes.</p>
+<p>Enhancement: Added support for parsing AS/400 directory listings to <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes.</p>
+<p>Enhancement: Added ability to specify a local data port range when using non-passive (active) connections.&nbsp; See <span class="f_CourierFixed">setDataPortRange</span> method in <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes.</p>
+<p>Enhancement: Added <span class="f_CourierFixed">getInputStream</span> and <span class="f_CourierFixed">getOutputStream</span> methods to <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps</span> classes.&nbsp; These new methods allow for performing an upload or download using the respective <span class="f_CourierFixed">InputStream</span> and <span class="f_CourierFixed">OutputStream</span> classes instead of using <span class="f_CourierFixed">upload()</span> or <span class="f_CourierFixed">download()</span> methods offering more control.</p>
+<p>Enhancement: Enhanced file transfer speed for ASCII transfers in <span class="f_CourierFixed">Sftp</span> class.</p>
+<p>Enhancement: Added support for <span class="f_CourierFixed">AUTH SSL</span> command in addition to existing <span class="f_CourierFixed">AUTH TLS</span> command in <span class="f_CourierFixed">Ftps </span>class.</p>
+<p>Bug Fix: Fixed <span class="f_CourierFixed">NullPointerException</span> encountered in <span class="f_CourierFixed">getResponseCode</span> method of <span class="f_CourierFixed">Ftp</span> and <span class="f_CourierFixed">Ftps </span>classes </p>
+<p>Bug Fix: Fixed issue in <span class="f_CourierFixed">Sftp</span> class for ASCII transfers.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 5.8</span></p>
+<p>July 11, 2006</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added <span class="f_CourierFixed">Ftp.setDataPort</span> and <span class="f_CourierFixed">Ftp.getDataPort</span> methods for specifying the local port to listen on in active connections.</p>
+<p>Enhancement: Added <span class="f_CourierFixed">Ftps.setShutdownCCC</span> and <span class="f_CourierFixed">Ftps.getShutdownCCC</span> methods to define whether SSL socket should be shutdown after entering CCC (Clear Command Channel) mode.&nbsp; These functions were added to address some servers which do not correctly require the shutdown of the control-channel socket after processing CCC command.</p>
+<p>Enhancement: Added automatic password masking when writing password to the debug stream.</p>
+<p>Bug Fix: Fixed 2GB limitation in <span class="f_CourierFixed">Scp</span> class.</p>
+<p>Bug Fix: Fixed issue in <span class="f_CourierFixed">Ftps.getNameListing</span> experienced in empty directories.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 5.7</span></p>
+<p>May 10, 2006</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added ASCII file transfer support for sftp servers using protocol versions prior to sftp version 4.&nbsp; </p>
+<p>Enhancement: Added ability to get/set line terminator in <span class="f_CodeExample">Sftp</span> class when performing ASCII transfers with servers using sftp protocol prior to sftp version 4.&nbsp; See <span class="f_CodeExample">Sftp.setLineTerminator</span> and <span class="f_CodeExample">Sftp.getLineTerminator </span>methods.</p>
+<p>Enhancement: <span class="f_CodeExample">Sftp.setDir</span> no longer checks whether the remote directory is valid due to some servers that do not support this functionality.&nbsp; A new <span class="f_CodeExample">Sftp.isPathValid</span> method has been added allowing you to check whether a path is valid while ensuring compatibility with all servers.</p>
+<p>Enhancement: Added support for XCRC command allowing you to perform checksum operations against local and remote files to verify that files were transferred without any corruption of data.&nbsp; See <span class="f_CodeExample">Ftp.checksum</span> and <span class="f_CodeExample">Ftps.checksum</span> methods.</p>
+<p>Enhancement: Added support for setting remote file permissions in <span class="f_CodeExample">Sftp</span> class using UNIX style chmod.&nbsp; See <span class="f_CodeExample">Sftp.setFilePermissions</span> method.</p>
+<p>Enhancement: Set default connection timeout for <span class="f_CodeExample">Sftp</span> class to 30000ms.</p>
+<p>Enhancement: Set default protocol version for <span class="f_CodeExample">Sftp</span> class to version 3 to avoid compatibility issues with servers that do not support version 4 of sftp protocol.</p>
+<p>Bug Fix: Fixed issue with <span class="f_CodeExample">Sftp.resumeUpload</span> method.</p>
+<p>Bug Fix: Fixed issue with <span class="f_CodeExample">Ftps.clearCommandChannel</span> method.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 5.6</span></p>
+<p>Apr. 6, 2006</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added adaptive transfer block size detection to <span class="f_CodeExample">Sftp</span> and <span class="f_CodeExample">Scp</span> classes resulting in improved performance of file transfers.</p>
+<p>Enhancement: Added <span class="f_CodeExample">clearCommandChannel</span> method to <span class="f_CodeExample">FtpsTransfer</span> class providing support for CCC command.</p>
+<p>Enhancement: Added <span class="f_CodeExample">getFeatures</span> method to <span class="f_CodeExample">Ftp</span> and <span class="f_CodeExample">Ftps</span> classes to return a feature listing in response to FEAT command.</p>
+<p>Enhancement: Added <span class="f_CodeExample">getMachineDirListing</span> method to <span class="f_CodeExample">Ftp</span> and <span class="f_CodeExample">Ftps</span> classes to get a directory listing using the MLSD command.</p>
+<p>Enhancement: Added <span class="f_CodeExample">getMachineFileListing</span> method to <span class="f_CodeExample">Ftp</span> and <span class="f_CodeExample">Ftps</span> classes to get details on a file using the MLST command.</p>
+<p>Enhancement: Added <span class="f_CodeExample">setPrivateKey</span> method to <span class="f_CodeExample">SshParameters</span> class which takes a <span class="f_CodeExample">java.security.KeyPair</span> argument instead of using a keystore.</p>
+<p>Bug Fix: Updated <span class="f_CodeExample">FtpProgressEvent</span> in <span class="f_CodeExample">Ftp </span>and <span class="f_CodeExample">Ftps</span> classes so that when uploading using an <span class="f_CodeExample">InputStream</span> the proper <span class="f_CodeExample">getTotalBytes</span> is returned</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 5.5</span></p>
+<p>Mar. 17, 2006</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added support for SCP protocol (secure copy over SSH).&nbsp; See <span class="f_CodeExample">com.jscape.inet.scp.Scp</span> class.</p>
+<p>Enhancement: Added abilty to specify a different key exchange security provider using system property <span class="f_CodeExample">jscape.kex.provider</span>.</p>
+<p>Enhancement: Improved timeout support in <span class="f_CodeExample">com.jscape.inet.sftp.Sftp</span> class.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 5.4</span></p>
+<p>Feb. 1, 2006</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added CCC (Clear Command Channel) support to <span class="f_CodeExample">Ftps</span> class. </p>
+<p>Enhancement: Added ability to define valid host keys when using sftp protocol.&nbsp; See <span class="f_CodeExample">com.jscape.inet.ssh.util.SshParameters.setHostKeys</span> method and <a href="validatinghostkeys.html">Classes &gt; Sftp &gt; Connecting to an SSH server &gt; Validating host keys</a> topic for details.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 5.3</span></p>
+<p>Jan. 3, 2006</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added file resume support to <span class="f_CodeExample">Ftp</span>, <span class="f_CodeExample">Ftps</span> and <span class="f_CodeExample">Sftp</span> classes allowing you to specify a different filename than the source filename.</p>
+<p>Enhancement: Added <span class="f_CodeExample">FtpChangeDirEvent </span>to capture when remote directory is changed for FTP and FTPS protocols.</p>
+<p>Enhancement: Added <span class="f_CodeExample">FtpCreateDirEvent</span> to capture when remote directory is created for FTP and FTPS protocols.</p>
+<p>Enhancement: Added <span class="f_CodeExample">FtpDeleteDirEvent</span> to capture when remote directory is deleted for FTP and FTPS protocols.</p>
+<p>Enhancement: Added <span class="f_CodeExample">FtpDeleteFileEvent</span> to capture when remote file is deleted for FTP and FTPS protocols.</p>
+<p>Enhancement: Added <span class="f_CodeExample">FtpRenameFileEvent </span>to capture when remote file is renamed for FTP and FTPS protocols.</p>
+<p>Enhancement: Added <span class="f_CodeExample">SftpChangeDirEvent</span> to capture when remote directory is changed for sftp protocol.</p>
+<p>Enhancement: Added <span class="f_CodeExample">SftpCreateDirEvent</span> to capture when remote directory is created for sftp protocol.</p>
+<p>Enhancement: Added <span class="f_CodeExample">SftpDeleteDirEvent</span> to capture when remote directory is deleted&nbsp; for sftp protocol.</p>
+<p>Enhancement: Added <span class="f_CodeExample">SftpDeleteFileEvent</span> to capture when remote file is deleted&nbsp; for sftp protocol.</p>
+<p>Enhancement: Added <span class="f_CodeExample">SftpRenameFileEvent</span> to capture when remote file is renamed&nbsp; for sftp protocol.</p>
+<p>Enhancement: Added ability to upload a file using an input stream to the <span class="f_CodeExample">Ftp</span>, <span class="f_CodeExample">Sftp</span> and <span class="f_CodeExample">Ftps</span> classes.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 5.2.2</span></p>
+<p>Nov. 17, 2005</p>
+<p>&nbsp;</p>
+<p>Bug Fix: Fix in <span class="f_CodeExample">com.jscape.inet.ftp.Ftp</span> class that checks for error when suddenly losing connection when transferring a file.</p>
+<p>Bug Fix: Fix issue in <span class="f_CodeExample">com.jscape.inet.sftp.Sftp</span> class that reported some remote directories as invalid. </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 5.2.1</span></p>
+<p>Nov. 11, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Improved performance for ASCII transfers in <span class="f_CodeExample">Ftp</span> and <span class="f_CodeExample">Ftps</span> classes.</p>
+<p>Bug Fix: Return -1 in <span class="f_CodeExample">Ftp.getResponseCode</span> if FTP server response cannot be parsed.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 5.2</span></p>
+<p>Oct. 4, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Improved public-key authentication support in sftp protocol. </p>
+<p>Enhancement: Improved exception handling in sftp protocol. </p>
+<p>Bug Fix: Fixed issue experienced during authentication with some ftps servers. </p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 5.1</span></p>
+<p>Aug. 9, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Changed default connection timeout for <span class="f_CodeExample">Ftps</span> class to 30 seconds.</p>
+<p>Enhancement: Improved handling of <span class="f_CodeExample">PASV</span> server response in <span class="f_CodeExample">Ftp</span> and <span class="f_CodeExample">Ftps</span> classes when communicating with FTP servers using a proxy, firewall or tunnel.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 5.0</span></p>
+<p>Jul. 22, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added support for FXP (site to site transfers) in <span class="f_CodeExample">com.jscape.inet.ftp.Fxp</span> and <span class="f_CodeExample">com.jscape.inet.ftps.Fxps</span> classes.</p>
+<p>Enhancement: Added proxy support to <span class="f_CodeExample">Sftp</span> class via <span class="f_CodeExample">setProxyHost</span> and <span class="f_CodeExample">setProxyAuthentication</span> methods.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 4.8</span></p>
+<p>Jun. 16, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added <span class="f_CodeExample">setClientCertificates</span> and <span class="f_CodeExample">setServerCertificates</span> methods to <span class="f_CodeExample">FtpsTransfer</span> class.</p>
+<p>Enhancement: Added <span class="f_CodeExample">login()</span> and <span class="f_CodeExample">connect(boolean login)</span> methods to <span class="f_CodeExample">Ftp</span> and <span class="f_CodeExample">Ftps </span>classes.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 4.7</span></p>
+<p>Jun. 6, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Created separate versions of library to accomodate both IBM and Sun JVM.</p>
+<p>Change: Changed order of MAC algorithms placing MD5 with higher priority than SHA1 in order to address MAC error on some SSH servers.</p>
+<p>Change: Changed keystore type in <span class="f_CodeExample">Ftps.setClientCertificates</span> and <span class="f_CodeExample">Ftps.setServerCertificates</span> to JKS from PKCS12 in order to accomodate importing of existing certificates.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 4.6</span></p>
+<p>May 18, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Improved performance of SFTP file transfers.</p>
+<p>Enhancement: Changed default transfer block size in SFTP related classes to 4096.</p>
+<p>Bug Fix: Fixed issue in <span class="f_CodeExample">com.jscape.inet.sftp.Sftp</span> class where exception was not thrown if <span class="f_CodeExample">setDir</span> was invoked with a file path instead of a directory.</p>
+<p>Bug Fix: Fixed timeout issue in <span class="f_CodeExample">com.jscape.inet.ssh.SshSession</span> class.</p>
+<p>Bug Fix: Fixed issued in <span class="f_CodeExample">com.jscape.inet.sftp.Sftp</span> class when downloading files to UNC paths.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 4.5</span></p>
+<p>Apr. 22, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added support for NAT in <span class="f_CodeExample">com.jscape.inet.ftp.Ftp</span>  and <span class="f_CodeExample">com.jscape.inet.ftp.Ftps</span> classes providing ability to set local address to use when issuing <span class="f_CodeExample">PORT</span> commands in non-passive (active) mode.&nbsp; See <span class="f_CodeExample">Ftp#setPortAddress</span>  and <span class="f_CodeExample">Ftps#setPortAddress</span> methods.</p>
+<p>Enhancement: Added abiltity to specify a client certificate when using the <span class="f_CodeExample">com.jscape.inet.ftps.Ftps</span> class.</p>
+<p>Enhancement: Added <span class="f_CodeExample">com.jscape.filetransfer</span> package.&nbsp; This package contains a <span class="f_CodeExample">FileTransfer </span>interface that is implemented by <span class="f_CodeExample">FtpTransfer</span>, <span class="f_CodeExample">FtpsTransfer</span>, <span class="f_CodeExample">FtpsImplicitTransfer</span> and <span class="f_CodeExample">SftpTransfer</span> classes.&nbsp; A set of protocol independent listeners and event classes are also provided in this package.&nbsp; This new package benefits users who with to use all protocols but do not want to write separate code or wrappers for each protocol.</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 4.4</span></p>
+<p>Feb. 27, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Improved authentication performance in <span class="f_CodeExample">Sftp</span> class</p>
+<p>Enhancement: Improved parsing of UNIX directory listings in <span class="f_CodeExample">Ftp</span> and <span class="f_CodeExample">Ftps</span> classes.</p>
+<p>Bug Fix: Fixed issue communicating with older F-Secure servers</p>
+<p>Bug Fix: Fixed NullPointerException encountered when using public-key authentication with invalid passphrase</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 4.3</span></p>
+<p>Feb. 7, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Improved performance of authentication process in SSH enabled components</p>
+<p>Bug Fix: Fixed issue of establishing communications with some SFTP servers</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 4.2</span></p>
+<p>Jan. 29, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added support for JDK 1.2.2 and above to both <span class="f_CodeExample">Sftp</span> and <span class="f_CodeExample">Ftps</span> classes</p>
+<p>Enhancement: Added ftps-implicit protocol option to FTCL set protocol command</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 4.1</span></p>
+<p>Jan. 25, 2005</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added support for Implicit SSL to <span class="f_CodeExample">Ftps </span>class</p>
+<p>Bug-Fix: Fixed issue communicating with VShell and F-Secure servers</p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p><span style="font-weight: bold;">Version 4.0</span> </p>
+<p>Dec. 20, 2004</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added FTPS (FTP over SSL) component.</p>
+<p>Enhancement: Added ASCII file transfer support to SFTP (FTP over SSH) component.</p>
+<p>Change: All SFTP related events are now in <span class="f_CodeExample">com.jscape.inet.sftp.events</span> package.</p>
+<p>Change: Moved SshParameters class to <span class="f_CodeExample">com.jscape.inet.ssh.util</span> package. </p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 3.04</span> </p>
+<p>Nov. 23, 2004</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added <span class="f_CodeExample">promptmask</span> command to FTCL scripting language. </p>
+<p>Bug Fix: Fixed issue with <span class="f_CodeExample">Sftp#upload</span> method</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 3.0.3</span></p>
+<p>Oct. 25, 2004</p>
+<p>&nbsp;</p>
+<p>Bug Fix: Fixed issue with <span class="f_CodeExample">Sftp#resumeUpload</span> method</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 3.0.2</span></p>
+<p>Sep. 9, 2004</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added prompt command to FTCL scripting language. </p>
+<p>Enhancement: Improved memory utilization when resuming downloads. </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 3.0.1</span></p>
+<p>Aug. 23, 2004</p>
+<p>&nbsp;</p>
+<p>Enhancement: Removed need for <span class="f_CodeExample">FtpFileParser</span> in SFTP component. </p>
+<p>Bug Fix: Fixed <span class="f_CodeExample">com.jscape.inet.ftp.Ftp#download</span> method where local file was created if remote file did not exist.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 3.0</span></p>
+<p>Aug. 14, 2004</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added ZLIB compression support to SFTP component. </p>
+<p>Enhancement: Added <span class="f_CodeExample">com.jscape.inet.sftp.Sftp#getNameListing</span> method. </p>
+<p>Enhancement: Added support for escaped characters (tabs, newlines, quotes etc.) in FTCL quoted strings. </p>
+<p>Enhancement: Added <span class="f_CodeExample">com.jscape.inet.sftp.VShellParser</span> class for parsing directory listings from VanDyke VShell server for Windows.</p>
+<p>Bug Fix: Fixed synchronization issues that were encountered with VanDyke VShell server for Windows. </p>
+<p>Bug Fix: Fixed issue in com.jscape.inet.ftp.Ftp#mdownload method experienced on some FTP servers.</p>
+<p>Bug Fix: Fixed issue in com.jscape.inet.ftp.UnixParser class parsing symbolic links with no group. </p>
+<p>Bug Fix: Fixed resume download issue in FTP and SFTP components. </p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 2.2</span></p>
+<p>Jun. 25, 2004</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added scripting support with FTCL (File Transfer Command Line) component</p>
+<p>Enhancement: Much improved downloading speed for SFTP transfers</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 2.1</span></p>
+<p>May 14, 2004</p>
+<p>&nbsp;</p>
+<p>Enhancement: Added ability to authenticate with SFTP server using public-key authentication methods. See new constructor in com.jscape.inet.sshutil.SshParameters class. </p>
+<p>Enhancement: Added ability to get filtered directory listings in <span class="f_CodeExample">Sftp </span>class. See <span class="f_CodeExample">com.jscape.inet.sftp.Sftp#getDirListingAsString(String filter)</span> method. </p>
+<p>Enhancement: Added timeout support to <span class="f_CodeExample">com.jscape.inet.sftp.Sftp</span> class. See <span class="f_CodeExample">com.jscape.inet.sftp.Sftp#setTimeout</span> method. </p>
+<p>Bug Fix: Fixed issue in <span class="f_CodeExample">com.jscape.inet.sftp.Sftp#getDirListing(String filter)</span> method. Results are now properly filtered. </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 2.0</span></p>
+<p>Feb. 23, 2004</p>
+<p>&nbsp;</p>
+<p>Enhancement: Rewrote SFTP component. SFTP no longer uses port forwarding but instead communicates directly with sftp subsystem provided by SSH.</p>
+<p>Enhancement: Added resume upload/download capabilities to FTP and SFTP components. See <span class="f_CodeExample">Ftp#resumeUpload</span> and <span class="f_CodeExample">Ftp#resumeDownload</span> methods. </p>
+<p>Enhancement: Added NLST support with filter to FTP component. See <span class="f_CodeExample">Ftp#getNameListing(String filter)</span> method.</p>
+<p>Bug Fix: Fixed issue in FTP component when performing a directory listing on NT FTP server with no files matching filter.</p>
+<p>Bug Fix: Fixed date parsing issue in UnixParser class for FTP component.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Version 1.0</span></p>
+<p>Sep. 15, 2003</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</body>
+</html>

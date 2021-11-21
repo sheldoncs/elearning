@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?escapecharacters.html"; }
+else { parent.quicksync('a2.7.11'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Escape characters</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Escape characters</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="runningftclscriptsfromwith2.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>The FTCL language allows for the use of escape characters when defining strings in the same way that the Java programming language does. The <span class="f_CodeExample">&quot;\&quot;</span> character is treated specially inside of strings indicating that the next character is to be escaped.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Escape sequences</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Escape sequence</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Description</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample">\t</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Tab</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample">\r</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Carriage return</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample">\n</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Line feed</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample">\\</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Backslash</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_CodeExample">\&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Quote</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p><span class="f_Note">Note</span></p>
+<p>&nbsp;</p>
+<p>This is especially important to consider when defining local paths on the Windows operating system. The local path c:\tmp must be defined as c:/tmp OR c:\\tmp when using FTCL commands that use local path information.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span class="f_Note" style="font-style: italic; font-weight: normal;">Incorrect</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">lcd &quot;c:\tmp\home&quot;</span></p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic; color: #007f00;">Correct</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">lcd &quot;c:/tmp/home&quot;</span></p>
+<p>&nbsp;</p>
+<p>The first example is incorrect as the <span class="f_CodeExample">&quot;\t&quot;</span> in <span class="f_CodeExample">&quot;c:\tmp\home&quot;</span> would be interpreted by FTCL as a tab character instead of a literal <span class="f_CodeExample">\t</span>. The second example corrects this issue by using a forward slash instead of a backslash.</p>
+
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?eventtypes_2.html"; }
+else { parent.quicksync('a2.2.3.2'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Event types</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Event types</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="listeningforevents_2.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="settingyourlocaldirectoryftps.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>The <span class="f_CodeExample">Ftps</span> class is the source for several FTP related events.&nbsp; All events may be captured by registering your class as a listener by implementing the <span class="f_CodeExample">FtpListener</span> class or subclassing the <span class="f_CodeExample">FtpAdapter</span> class.&nbsp; These events are described below.</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Event</span></p>
+</td>
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Description</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_CodeExample">FtpConnectedEvent</span></p>
+</td>
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">FtpConnectedEvent</span><span class="f_Notetext"> is published once a connection to the server has been established. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_CodeExample">FtpDisconnectedEvent</span></p>
+</td>
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">FtpDisconnectedEvent</span><span class="f_Notetext"> is published once the connection to the server has been released. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_CodeExample">FtpDownloadEvent</span></p>
+</td>
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">FtpDownloadEvent</span><span class="f_Notetext"> is published for each file downloaded from the server. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_CodeExample">FtpUploadEvent</span></p>
+</td>
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">FtpUploadEvent</span><span class="f_Notetext"> is published for each file uploaded to the server. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_CodeExample">FtpListingEvent</span></p>
+</td>
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">FtpListingEvent</span><span class="f_Notetext"> is published for each directory listing retrieved from the server. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_CodeExample">FtpProgressEvent</span></p>
+</td>
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">FtpProgressEvent</span><span class="f_Notetext"> is published one or more times during the transfer of files to / from the server. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_CodeExample">FtpCommandEvent</span></p>
+</td>
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">FtpCommandEvent</span><span class="f_Notetext"> is published for each command sent to the server. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_CodeExample">FtpResponseEvent</span></p>
+</td>
+<td valign="top" width="320px" style="width:320px; border: solid 1px #000000;"><p><span class="f_Notetext">The </span><span class="f_CodeExample">FtpResponseEvent</span><span class="f_Notetext"> is published for each response received from the server. See JavaDoc for details on this event.</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?relativev_s_absolutepaths.html"; }
+else { parent.quicksync('a2.7.6'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Relative v.s. absolute paths</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="getdir">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Relative v.s. absolute paths</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="commentsinscriptfiles.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="definingandusingvariables.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>Several commands in the FTCL language make reference to relative and absolute paths. Understanding how relative and absolute paths are used in the local and remote environments is important to using the FTCL commands properly. The commands that make use of relative and/or absolute paths include:</p>
+<p>&nbsp;</p>
+<p><a href="scriptingcommands.html#append">append</a></p>
+<p><a href="scriptingcommands.html#cd">cd</a></p>
+<p><a href="scriptingcommands.html#del">del</a></p>
+<p><a href="scriptingcommands.html#deldir">deldir</a></p>
+<p><a href="scriptingcommands.html#get">get</a></p>
+<p><a href="scriptingcommands.html#getdir">getdir</a></p>
+<p><a href="scriptingcommands.html#lcd">lcd</a></p>
+<p><a href="scriptingcommands.html#lcopy">lcopy</a></p>
+<p><a href="scriptingcommands.html#ldel">ldel</a></p>
+<p><a href="scriptingcommands.html#ldeldir">ldeldir</a></p>
+<p><a href="scriptingcommands.html#lmove">lmove</a></p>
+<p><a href="scriptingcommands.html#lrename">lrename</a> </p>
+<p><a href="scriptingcommands.html#put">put</a></p>
+<p><a href="scriptingcommands.html#putdir">putdir</a></p>
+<p><a href="scriptingcommands.html#rename">rename</a></p>
+<p><a href="scriptingcommands.html#setlogfile">set logfile</a></p>
+<p><a href="scriptingcommands.html#setprivatekey">set privatekey</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Local Environment</span></p>
+<p>&nbsp;</p>
+<p>In the local environment, absolute paths are defined by providing the full system path to the desired file or directory. Relative paths are defined by providing the path relative to the current local directory. The current local directory may be set using the <span class="f_CodeExample">lcd</span> command. This directory is used to calculate the absolute path.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example Relative Paths</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Current Local Directory</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Path </span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Resulting Path</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/tmp</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">logs</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/tmp/logs</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/tmp</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">logs.txt</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/tmp/logs.txt</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/tmp</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">logs/logs.txt</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/tmp/logs/logs.txt</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example Absolute Paths</span></p>
+<p>&nbsp;</p>
+<p>When using absolute paths the Current Local Directory is ignored. Instead the absolute path is determined by the path provided.</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Current Local Directory</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Path</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Resulting Path</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/tmp</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/www/images</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/www/images</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/tmp</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/logs/archive</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">c:/logs/archive</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Remote Environment</span></p>
+<p>&nbsp;</p>
+<p>In the remote environment, absolute paths are defined by providing the full path to the desired file or directory as understood by the FTP/SFTP server. Relative paths are defined by providing the path relative to the current remote directory. The current remote directory may be set using the <span class="f_CodeExample">cd</span> command. This directory is used to calculate the absolute path.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example Relative Paths</span></p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Current Remote Directory</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Path </span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Resulting Path</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/var</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">logs</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/var/logs</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/var</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">logs.txt</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/var/logs.txt</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/var</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">logs/logs.txt</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/var/logs/logs.txt</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example Absolute Paths</span></p>
+<p>&nbsp;</p>
+<p>When using absolute paths the Current Local Directory is ignored. Instead the absolute path is determined by the path provided.</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Current Remote Directory</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Path</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_Notetext" style="font-weight: bold;">Resulting Path</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/var</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/home/users</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/home/users</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/var/</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/home/users/jsmith</span></p>
+</td>
+<td valign="top" width="292px" style="width:292px; border: solid 1px #000000;"><p><span class="f_CodeExample">/home/users/jsmith</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+
+</body>
+</html>

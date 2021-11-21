@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?automaticallydetectingthetr3.html"; }
+else { parent.quicksync('a2.6.6.1'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Automatically detecting the transfer mode</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Automatically detecting the transfer mode</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="retrievingalocaldirectoryl2.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="uploadingbinaryfiles2.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>When uploading files the transfer mode is by default set to binary. Using the <span class="f_CodeExample">Sftp#setAuto</span> method you may set it to automatically detect the transfer mode to use ( ASCII or binary) based on the file extension of the file transferred. If you are uploading multiple files it is often convenient to have the transfer mode automatically detected and set based on the type of file being uploaded. </p>
+<p>&nbsp;</p>
+<p>Binary files such as images should be uploaded using the binary transfer mode. ASCII files such as text documents should be uploaded using the ASCII transfer mode. You can have this handled automatically using the <span class="f_CodeExample">Sftp#setAuto</span> method. </p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// automatically detect transfer mode</span></p>
+<p><span style="font-family: 'Courier New';">sftp.setAuto(</span><span style="font-family: 'Courier New'; font-weight: bold;">true</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// upload all files in current local directory</span></p>
+<p><span style="font-family: 'Courier New';">sftp.mupload(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;*.*&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+
+
+</body>
+</html>

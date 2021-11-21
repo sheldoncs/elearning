@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?runningftclscriptsfromwith.html"; }
+else { parent.quicksync('a2.7.9'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Running FTCL scripts from within Ant</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Running FTCL scripts from within Ant</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="promptinguserfordata.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="runningftclscriptsfromwith2.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p><span style="color: #0000ff; text-decoration: underline;"><a href="http://ant.apache.org" target="_blank" class="weblink">Apache Ant</a></span> is a Java based build tool that is used for automating software builds. File Transfer Command Line may be used with the Ant build tool to automate file transfer tasks. The following instructions demonstrate how to use FTCL in Ant. </p>
+<p>&nbsp;</p>
+<p>1. Add the following FTCL task definition tag at the top your Ant build file.</p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">&lt;taskdef name=&quot;ftcl&quot; classname=&quot;com.jscape.ftcl.FileTransferAgentTask&quot; classpath=&quot;C:\secureftpfactory\lib\</span><span class="f_CodeExample">sftp.jar</span><span class="f_CodeExample">&quot;/&gt;</span></p>
+<p>&nbsp;</p>
+<p>The classpath attribute must point to the sftp.jar file distributed with Secure FTP Factory.</p>
+<p>&nbsp;</p>
+<p>2. Add the FTCL task to the appropriate location in your Ant build file.</p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">&lt;ftcl scriptfile=&quot;c:\tmp\script.txt&quot;/&gt; </span></p>
+<p>&nbsp;</p>
+<p>The scriptfile attribute should point to the script file to be run by FTCL.</p>
+
+
+</body>
+</html>

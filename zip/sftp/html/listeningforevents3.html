@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?listeningforevents3.html"; }
+else { parent.quicksync('a2.5.3.1'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Listening for events</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Listening for events</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="releasingaconnection2.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="eventtypes3.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>For an object to listen for events published by the <span class="f_CodeExample">Scp</span> class the following steps are required:</p>
+<p>&nbsp;</p>
+<p>1. Set object to implement <span class="f_CodeExample">ScpEventListener</span> class.</p>
+<p>2. Overload event handling methods.</p>
+<p>3. Subscribe object to receive events published by <span class="f_CodeExample">Scp</span> instance.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p>The example below demonstrates using the <span class="f_CodeExample">ScpEventListener</span> class.</p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New';">import java.io.*;</span></p>
+<p><span style="font-family: 'Courier New';">import com.jscape.inet.scp.Scp;</span></p>
+<p><span style="font-family: 'Courier New';">import com.jscape.inet.scp.events.*;</span></p>
+<p><span style="font-family: 'Courier New';">import com.jscape.inet.ssh.util.SshParameters;</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; color: #0000ff;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; color: #0000ff;">class</span><span style="font-family: 'Courier New';"> ScpExample implements ScpEventListener {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; color: #0000ff;">public</span><span style="font-family: 'Courier New';"> ScpExample(String hostname, String username, String password, String filename, String destination) throws Exception  &nbsp; &nbsp; &nbsp; &nbsp;{</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// create new SshParamters instance</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">SshParameters params = </span><span style="font-family: 'Courier New'; color: #0000ff;">new</span><span style="font-family: 'Courier New';"> SshParameters(hostname,username,password);</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// create new Scp instance</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">Scp scp = </span><span style="font-family: 'Courier New'; color: #0000ff;">new</span><span style="font-family: 'Courier New';"> Scp(params);</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// register event listener</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">scp.addListener(</span><span style="font-family: 'Courier New'; color: #0000ff;">this</span><span style="font-family: 'Courier New';">);</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// establish connection</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">scp.connect(); &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// upload file</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">scp.upload(</span><span style="font-family: 'Courier New'; color: #0000ff;">new</span><span style="font-family: 'Courier New';"> File(filename),destination);</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// disconnect</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">scp.disconnect();</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">}</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; color: #0000ff;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; color: #0000ff;">void</span><span style="font-family: 'Courier New';"> download(ScpFileDownloadedEvent evt) {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">System.out.println(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Downloaded file: &quot;</span><span style="font-family: 'Courier New';"> + evt.getFilename()); &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">}</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; color: #0000ff;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; color: #0000ff;">void</span><span style="font-family: 'Courier New';"> upload(ScpFileUploadedEvent evt) {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">System.out.println(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Uploaded file: &quot;</span><span style="font-family: 'Courier New';"> + evt.getFilename());</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">}</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; color: #0000ff;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; color: #0000ff;">void</span><span style="font-family: 'Courier New';"> progress(ScpTransferProgressEvent evt) {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">System.out.println(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Transfer progress: &quot;</span><span style="font-family: 'Courier New';"> + evt.getFilename() + </span><span style="font-family: 'Courier New'; color: #000080;">&quot; &quot;</span><span style="font-family: 'Courier New';"> + evt.getTransferredBytes() + </span><span style="font-family: 'Courier New'; color: #000080;">&quot; bytes.&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">}</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; color: #0000ff;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; color: #0000ff;">void</span><span style="font-family: 'Courier New';"> connected(ScpConnectedEvent evt) {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">System.out.println(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Connected to host: &quot;</span><span style="font-family: 'Courier New';"> + evt.getHost());</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">}</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; color: #0000ff;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; color: #0000ff;">void</span><span style="font-family: 'Courier New';"> disconnected(ScpDisconnectedEvent evt) {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">System.out.println(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Disconnected from host: &quot;</span><span style="font-family: 'Courier New';"> + evt.getHost());</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">}</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; color: #0000ff;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; color: #0000ff;">static</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; color: #0000ff;">void</span><span style="font-family: 'Courier New';"> main(String[] args) {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; color: #0000ff;">try</span><span style="font-family: 'Courier New';"> {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// collect connection details and launch example</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">BufferedReader reader = </span><span style="font-family: 'Courier New'; color: #0000ff;">new</span><span style="font-family: 'Courier New';"> BufferedReader(</span><span style="font-family: 'Courier New'; color: #0000ff;">new</span><span style="font-family: 'Courier New';"> InputStreamReader(System.in));</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">System.out.print(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Enter SCP hostname: &quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">String hostname = reader.readLine();</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">System.out.print(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Enter SCP username: &quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">String username = reader.readLine();</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">System.out.print(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Enter SCP password: &quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">String password = reader.readLine();</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">System.out.print(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Enter file to upload e.g. c:/tmp/test.txt : &quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">String filename = reader.readLine();</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">System.out.print(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Enter destination directory with ending path separator e.g. /home/user/ : &quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">String destination = reader.readLine();</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">ScpExample example = </span><span style="font-family: 'Courier New'; color: #0000ff;">new</span><span style="font-family: 'Courier New';"> ScpExample(hostname,username,password, filename, destination); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">} </span><span style="font-family: 'Courier New'; color: #0000ff;">catch</span><span style="font-family: 'Courier New';">(Exception e) {</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">e.printStackTrace();</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p> &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 'Courier New';">}</span></p>
+<p><span style="font-family: 'Courier New';">}</span></p>
+
+
+</body>
+</html>

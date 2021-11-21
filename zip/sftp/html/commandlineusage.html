@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?commandlineusage.html"; }
+else { parent.quicksync('a2.7.2'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Command line usage</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Command line usage</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="overview.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="commandlineoptions.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p><span class="f_CodeExample">Usage EXE: ftcl -f scriptfile [-options]</span></p>
+<p><span class="f_CodeExample">Usage JAR: java -jar ftcl.jar -f scriptfile [-options]</span></p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example Usage EXE</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">ftcl -f ftpscript.txt -h ftp.myhost.com -u jsmith -p secret</span></p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example Usage JAR</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">java -jar ftcl.jar -f ftpscript.txt -h ftp.myhost.com -u jsmith -p secret</span></p>
+<p>&nbsp;</p>
+<p>The above examples use FTCL to connect to the host ftp.myhost.com with the username <span class="f_CodeExample">jsmith</span> and password <span class="f_CodeExample">secret</span>. Once connected the commands in the script file <span class="f_CodeExample">ftpscript.txt</span> are executed on the remote host. </p>
+<p>&nbsp;</p>
+<p><span class="f_Note">Notes</span></p>
+<p>&nbsp;</p>
+<p style="margin: 0px 48px 0px 48px;"><span class="f_Notetext">1. When using the EXE version the ftcl.exe executable must be in your system path or current directory. The EXE version may be used on the Windows operating system only. </span></p>
+<p style="margin: 0px 48px 0px 48px;"><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 48px 0px 48px;"><span class="f_Notetext">2. When using the JAR version the java.exe executable must be in your system path or current directory and the full path to the ftcl.jar file must be specified if not located in your current directory. The JAR version is platform independent and may be used on all platforms.</span></p>
+
+
+</body>
+</html>

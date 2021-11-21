@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?resuminguploads3.html"; }
+else { parent.quicksync('a2.6.6.8'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Resuming uploads</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Resuming uploads</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="uploadingfilesfrommemory2.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="automaticallydetectingthetr4.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>If a file fails to upload completely you can resume the upload using any of the <span class="f_CodeExample">Sftp#resumeUpload</span> methods.&nbsp; Prior to using the <span class="f_CodeExample">Sftp#resumeUpload</span> method you must first determine how much of the file in bytes was successfully uploaded.&nbsp; To do this you may use the <span class="f_CodeExample">Sftp#getFilesize</span> method which will return the length of the remote file in bytes.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// get length of remote file</span></p>
+<p><span style="font-family: 'Courier New'; color: #000080;">long</span><span style="font-family: 'Courier New';"> offset = sftp.getFilesize(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;setup.zip&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// resume file upload starting from offset</span></p>
+<p><span style="font-family: 'Courier New';">sftp.resumeUpload(</span><span style="font-family: 'Courier New'; color: #000080;">new</span><span style="font-family: 'Courier New';"> File(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;c:/setup.zip&quot;</span><span style="font-family: 'Courier New';">),offset);</span></p>
+<p>&nbsp;</p>
+<p><span class="f_Note">Note</span></p>
+<p>&nbsp;</p>
+<p style="margin: 0px 48px 0px 48px;"><span class="f_Notetext">Resuming uploads is only possible when transferring files in binary mode.&nbsp; Resuming a transfer in ASCII mode is not supported.</span></p>
+<p>&nbsp;</p>
+
+
+</body>
+</html>

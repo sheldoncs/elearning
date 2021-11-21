@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?retrievingfiletimestampinfo_2.html"; }
+else { parent.quicksync('a2.2.8.7'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Retrieving file timestamp information</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Retrieving file timestamp information</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="retrievingfilesizeinformatio_2.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="overview5.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>You can retrieve the date a file was last modified using the <span class="f_CodeExample">Ftps#getFileTimestamp</span> method. All filenames are relative to your current remote directory.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// get last modified date of image.gif</span></p>
+<p><span style="font-family: 'Courier New';">Date date = ftps.getFileTimestamp(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;image.gif&quot;</span><span style="font-family: 'Courier New';">); </span></p>
+<p>&nbsp;</p>
+<p><span class="f_Note">Note</span></p>
+<p>&nbsp;</p>
+<p style="margin: 0px 48px 0px 48px;"><span class="f_Notetext">The </span><span class="f_CodeExample">Ftps#getFileTimestamp</span><span class="f_Notetext"> method utilizes a command that is supported by a majority of FTP servers however is not officially recognized by RFC 959 so may not be supported on some FTP servers.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">See also</span> </p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 13px;"><a href="settingyourremotedirectoryftps.html">Setting your remote directory</a></p>
+
+
+</body>
+</html>

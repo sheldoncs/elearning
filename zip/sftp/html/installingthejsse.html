@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?installingthejsse.html"; }
+else { parent.quicksync('a1.2.1'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Installing the JSSE</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Installing the JSSE</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="systemrequirements.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="installingthejce.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>The JSSE (Java Secure Socket Extension) is a set of optional packages for JDK 1.2.x and JDK 1.3.x that enable secure Internet communications using SSL (Secure Sockets Layer) and TLS (Transport Layer Security) protocols.&nbsp; The JSSE is necessary only if you are using the <span class="f_CodeExample">Ftps</span> class with a JDK prior to JDK 1.4.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Download the JSSE</span></p>
+<p>&nbsp;</p>
+<p>The first step in installing the JSSE is to download the optional JSSE package provided for JDK versions 1.2.x and 1.3.x.&nbsp; </p>
+<p>&nbsp;</p>
+<p><span style="color: #0000ff; text-decoration: underline;"><a href="http://java.sun.com/products/jsse/" target="_blank" class="weblink">http://java.sun.com/products/jsse/</a></span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Install the JSSE jar files</span></p>
+<p>&nbsp;</p>
+<p>After downloading the JSSE extract the contents of the package to a directory on your system.&nbsp; In the lib directory of this package you will find the files <span class="f_CodeExample">jcert.jar</span>, <span class="f_CodeExample">jnet.jar</span> and <span class="f_CodeExample">jsse.jar</span>.&nbsp; Copy these files to your <span class="f_CodeExample">&lt;java-home&gt;/lib/ext</span> directory e.g. <span class="f_CodeExample">C:\jdk1.2.2\jre\lib\ext</span>.</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">Register the SunJSSE provider</span></p>
+<p>&nbsp;</p>
+<p>In your <span class="f_CodeExample">&lt;java-home&gt;/lib/security/java.security</span> file you should find a section that lists the security providers and their preference.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">#</span></p>
+<p><span class="f_CodeExample"># List of providers and their preference orders (see above):</span></p>
+<p><span class="f_CodeExample">#</span></p>
+<p><span class="f_CodeExample">security.provider.1=sun.security.provider.Sun</span></p>
+<p>&nbsp;</p>
+<p>Update this section registering the <span class="f_CodeExample">com.sun.net.ssl.internal.ssl.Provider</span> class as a provider.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">#</span></p>
+<p><span class="f_CodeExample"># List of providers and their preference orders (see above):</span></p>
+<p><span class="f_CodeExample">#</span></p>
+<p><span class="f_CodeExample">security.provider.1=sun.security.provider.Sun</span></p>
+<p><span class="f_CodeExample">security.provider.2=com.sun.net.ssl.internal.ssl.Provider</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</body>
+</html>

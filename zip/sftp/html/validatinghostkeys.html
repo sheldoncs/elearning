@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?validatinghostkeys.html"; }
+else { parent.quicksync('a2.6.2.2'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Validating host keys</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Validating host keys</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="establishingaconnection5.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="settingconnectiontimeout5.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>When connecting to an SSH server using the <span class="f_CodeExample">Sftp</span> class you may define that your login credentials only be submitted to hosts that provide a host key with a recognized fingerprint.&nbsp; This prevents the possibility of a man in the middle attack.&nbsp; You may specify what host keys are allowed using a <span class="f_CodeExample">SshHostKeys</span> instance and the <span class="f_CodeExample">SshParameters.setHostKeys</span> method.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// create new SshParameters instance</span></p>
+<p><span style="font-family: 'Courier New';">SshParameters params = </span><span style="font-family: 'Courier New'; color: #0000ff;">new</span><span style="font-family: 'Courier New';"> SshParameters(hostname, port, username, password);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// create new SshHostKeys instance</span></p>
+<p><span style="font-family: 'Courier New';">SshHostKeys keys = </span><span style="font-family: 'Courier New'; color: #0000ff;">new</span><span style="font-family: 'Courier New';"> SshHostKeys();</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// specify valid remote server address</span></p>
+<p><span style="font-family: 'Courier New';">InetAddress address = InetAddress.getByName(hostname);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// add valid fingerprint to SshHostKeys instance</span></p>
+<p><span style="font-family: 'Courier New';">keys.addKey(address, </span><span style="font-family: 'Courier New'; color: #000080;">&quot;18:bc:ec:a5:0f:9a:fc:1a:60:96:7a:17:c8:ed:73:ac&quot;</span><span style="font-family: 'Courier New';">);&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// update SshParameters instance to validate against fingerprint in SshHostKeys instance</span></p>
+<p><span style="font-family: 'Courier New';">params.setHostKeys(keys, </span><span style="font-family: 'Courier New'; color: #0000ff;">false</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// create a new Sftp instance</span></p>
+<p><span style="font-family: 'Courier New';">Sftp sftp = </span><span style="font-family: 'Courier New'; color: #0000ff;">new</span><span style="font-family: 'Courier New';"> Sftp(params);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// establish connection</span></p>
+<p><span style="font-family: 'Courier New';">sftp.connect();</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #008000;">// gets updated host keys (if updated)</span></p>
+<p><span style="font-family: 'Courier New';">keys = sftp.getHostKeys();</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</body>
+</html>

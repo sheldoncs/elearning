@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?runningftclscriptsfromwith2.html"; }
+else { parent.quicksync('a2.7.10'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Running FTCL scripts from within Java</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Running FTCL scripts from within Java</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="runningftclscriptsfromwith.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="escapecharacters.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>FTCL scripts may be processed from within Java code by creating a new <span class="f_CodeExample">FTCL</span> instance and invoking the appropriate execute() method. Scripts may be executed from a file or from an array of bytes. The necessary FTCL classes are located in the Secure FTP Factory sftp.jar file. </p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">import</span><span style="font-family: 'Courier New';"> com.jscape.ftcl.FTCL;</span></p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">import</span><span style="font-family: 'Courier New';"> com.jscape.ftcl.FTCLException;</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">import</span><span style="font-family: 'Courier New';"> java.io.File;</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">class</span><span style="font-family: 'Courier New';"> FTCLExample {</span></p>
+<p><span style="font-family: 'Courier New';">  </span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">static</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> main(String[] args) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// create new FTCL instance</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; FTCL ftcl = </span><span style="font-family: 'Courier New'; font-weight: bold;">new</span><span style="font-family: 'Courier New';"> FTCL();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// load script file</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; File script = </span><span style="font-family: 'Courier New'; font-weight: bold;">new</span><span style="font-family: 'Courier New';"> File(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;c:/ftpscript.txt&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// execute script and capture any exceptions</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-weight: bold;">try</span><span style="font-family: 'Courier New';"> {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; ftcl.execute(script);&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; } </span><span style="font-family: 'Courier New'; font-weight: bold;">catch</span><span style="font-family: 'Courier New';">(FTCLException fe) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; fe.printStackTrace();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; }&nbsp;&nbsp;&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">} </span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span> </p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">import</span><span style="font-family: 'Courier New';"> com.jscape.ftcl.FTCL;</span></p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">import</span><span style="font-family: 'Courier New';"> com.jscape.ftcl.FTCLException;</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">class</span><span style="font-family: 'Courier New';"> FTCLExample {</span></p>
+<p><span style="font-family: 'Courier New';">  </span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">static</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> main(String[] args) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// create new FTCL instance</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; FTCL ftcl = </span><span style="font-family: 'Courier New'; font-weight: bold;">new</span><span style="font-family: 'Courier New';"> FTCL();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// create buffer that contains commands to execute</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; StringBuffer buffer = </span><span style="font-family: 'Courier New'; font-weight: bold;">new</span><span style="font-family: 'Courier New';"> StringBuffer();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; buffer.append(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;set hostname \&quot;</span><span style="font-family: 'Courier New';">ftp.myserver.com\</span><span style="font-family: 'Courier New'; color: #000080;">&quot;\r\n&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; buffer.append(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;set username \&quot;</span><span style="font-family: 'Courier New';">jsmith\</span><span style="font-family: 'Courier New'; color: #000080;">&quot;\r\n&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; buffer.append(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;set password \&quot;</span><span style="font-family: 'Courier New';">secret\</span><span style="font-family: 'Courier New'; color: #000080;">&quot;\r\n&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; buffer.append(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;connect\r\n&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; buffer.append(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;dir\r\n&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; buffer.append(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;disconnect\r\n&quot;</span><span style="font-family: 'Courier New';">);&nbsp;&nbsp;&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// execute script and capture any exceptions</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-weight: bold;">try</span><span style="font-family: 'Courier New';"> {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-weight: bold;">byte</span><span style="font-family: 'Courier New';">[] data = buffer.toString().getBytes();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; ftcl.execute(data);&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; } </span><span style="font-family: 'Courier New'; font-weight: bold;">catch</span><span style="font-family: 'Courier New';">(FTCLException fe) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; fe.printStackTrace();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; }&nbsp;&nbsp;&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">}</span></p>
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?connectingfrombehindafirew.html"; }
+else { parent.quicksync('a2.1.2.3'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Connecting from behind a firewall</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Connecting from behind a firewall</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="settingnetworkconnectiontim.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="connectingthruaproxyserver.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>The <span class="f_CodeExample">Ftp</span> class is firewall friendly in that by default it uses a firewall friendly passive connection.&nbsp; Some firewall however may require that you route all connections thru the firewall.&nbsp; To do this you must change the arguments passed to the <span class="f_CodeExample">Ftp</span> constructor.</p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p><span style="font-weight: bold;">&nbsp;</span></p>
+<p>The example below routes the FTP connection thru the firewall.</p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// define connection setting</span></p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">int</span><span style="font-family: 'Courier New';"> firewallPort = </span><span style="font-family: 'Courier New'; color: #000080;">21</span><span style="font-family: 'Courier New';">;</span></p>
+<p><span style="font-family: 'Courier New';">String firewallHostname = </span><span style="font-family: 'Courier New'; color: #000080;">&quot;192.168.1.1&quot;</span><span style="font-family: 'Courier New';">;</span></p>
+<p><span style="font-family: 'Courier New';">String ftpHostname = </span><span style="font-family: 'Courier New'; color: #000080;">&quot;ftp.myhost.com&quot;</span><span style="font-family: 'Courier New';">;</span></p>
+<p><span style="font-family: 'Courier New';">String ftpUsername = </span><span style="font-family: 'Courier New'; color: #000080;">&quot;jsmith&quot;</span><span style="font-family: 'Courier New';">;</span></p>
+<p><span style="font-family: 'Courier New';">String ftpPassword = </span><span style="font-family: 'Courier New'; color: #000080;">&quot;secret&quot;</span><span style="font-family: 'Courier New';">;</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// create new Ftp instance</span></p>
+<p><span style="font-family: 'Courier New';">Ftp ftp = </span><span style="font-family: 'Courier New'; font-weight: bold;">new</span><span style="font-family: 'Courier New';"> Ftp(firewallHostname, ftpUsername + </span><span style="font-family: 'Courier New'; color: #000080;">&quot;@&quot;</span><span style="font-family: 'Courier New';"> + ftpHostname, ftpPassword, firewallPort);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// establish connection thru firewall</span></p>
+<p><span style="font-family: 'Courier New';">ftp.connect();</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">See also</span> </p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 13px;"><a href="connectingthruaproxyserver.html">Connecting thru a proxy server</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</body>
+</html>

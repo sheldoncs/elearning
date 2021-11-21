@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?listeningforevents_2.html"; }
+else { parent.quicksync('a2.2.3.1'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Listening for events</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Listening for events</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="releasingaconnection8.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="eventtypes_2.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>For an object to listen for events published by the <span class="f_CodeExample">Ftps</span> component the following steps are required:</p>
+<p>&nbsp;</p>
+<p>1. Set object to implement <span class="f_CodeExample">FtpListener</span> or extend <span class="f_CodeExample">FtpAdapter</span> class. </p>
+<p>&nbsp;</p>
+<p>2. Overload event handling methods. </p>
+<p>&nbsp;</p>
+<p>3. Subscribe object to receive events published by <span class="f_CodeExample">Ftps</span> instance. </p>
+<p>&nbsp;</p>
+<p>The <span class="f_CodeExample">FtpListener</span> class is a pure interface and can be used in cases where the class you defined to listen for events already extends another class type. The <span class="f_CodeExample">FtpAdapter</span> class implements the <span class="f_CodeExample">FtpListener</span> interface and can be used in cases where there is no need for class inheritance. </p>
+<p>&nbsp;</p>
+<p><span class="f_Note">Note</span></p>
+<p>&nbsp;</p>
+<p style="margin: 0px 48px 0px 48px;"><span class="f_Notetext">Unless your class requires inheritance it is generally easier to use the </span><span class="f_CodeExample">FtpAdapter</span><span class="f_Notetext"> class as it provides default implementations for all the event handler methods defined in the </span><span class="f_CodeExample">FtpListener</span><span class="f_Notetext"> interface. This allows you to overload only the event handler methods that you are interested in.</span></p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p>The example below demonstrates using the <span class="f_CodeExample">FtpListener</span> class.</p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">import</span><span style="font-family: 'Courier New';"> com.jscape.inet.ftp.*;</span></p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">import</span><span style="font-family: 'Courier New';"> com.jscape.inet.ftps.*;</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">class</span><span style="font-family: 'Courier New';"> MyFtpListener </span><span style="font-family: 'Courier New'; font-weight: bold;">implements</span><span style="font-family: 'Courier New';"> FtpListener {</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> commandSent(FtpCommandEvent evt) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// process event</span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> connected(FtpConnectedEvent evt) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// capture connected event and print info to console</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; System.out.println(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Connected to host: &quot;</span><span style="font-family: 'Courier New';"> + evt.getHostname());</span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> disconnected(FtpDisconnectedEvent evt) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// capture disconnected event and print info to console</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; System.out.println(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Disconnected from host: &quot;</span><span style="font-family: 'Courier New';"> + evt.getHostname());</span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> download(FtpDownloadEvent evt) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// process event</span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> listing(FtpListingEvent evt) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// process event</span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> progress(FtpProgressEvent evt) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// process event</span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> responseReceived(FtpResponseEvent evt) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// process event</span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> upload(FtpUploadEvent evt) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// process event&nbsp;&nbsp;&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">  </span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> connectionLost(FtpConnectionLostEvent evt) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// process event</span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">static</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> main(String[] args) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-weight: bold;">try</span><span style="font-family: 'Courier New';"> {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; Ftps ftps = </span><span style="font-family: 'Courier New'; font-weight: bold;">new</span><span style="font-family: 'Courier New';"> Ftps(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;ftp.myserver.com&quot;</span><span style="font-family: 'Courier New';">, </span><span style="font-family: 'Courier New'; color: #000080;">&quot;jsmith&quot;</span><span style="font-family: 'Courier New';">, </span><span style="font-family: 'Courier New'; color: #000080;">&quot;secret&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// subscribe MyFtpListener to events published</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; ftps.addFtpListener(</span><span style="font-family: 'Courier New'; font-weight: bold;">new</span><span style="font-family: 'Courier New';"> MyFtpListener());</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; ftps.connect();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; ftps.disconnect();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; } </span><span style="font-family: 'Courier New'; font-weight: bold;">catch</span><span style="font-family: 'Courier New';"> (Exception e) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; e.printStackTrace();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; }</span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">}</span></p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p>The example below demonstrates using the <span class="f_CodeExample">FtpAdapter</span> class.</p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">import</span><span style="font-family: 'Courier New';"> com.jscape.inet.ftp.*;</span></p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">import</span><span style="font-family: 'Courier New';"> com.jscape.inet.ftps.*;</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">class</span><span style="font-family: 'Courier New';"> MyFtpAdapter </span><span style="font-family: 'Courier New'; font-weight: bold;">extends</span><span style="font-family: 'Courier New';"> FtpAdapter {</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> connected(FtpConnectedEvent evt) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// capture connected event</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; System.out.println(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Connected to host: &quot;</span><span style="font-family: 'Courier New';"> + evt.getHostname());</span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">  </span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> disconnected(FtpDisconnectedEvent evt) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// capture disconnected event</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; System.out.println(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;Disconnected from host: &quot;</span><span style="font-family: 'Courier New';"> + evt.getHostname());</span></p>
+<p><span style="font-family: 'Courier New';">  }&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';">  </span></p>
+<p><span style="font-family: 'Courier New';">  </span><span style="font-family: 'Courier New'; font-weight: bold;">public</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">static</span><span style="font-family: 'Courier New';"> </span><span style="font-family: 'Courier New'; font-weight: bold;">void</span><span style="font-family: 'Courier New';"> main(String[] args) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-weight: bold;">try</span><span style="font-family: 'Courier New';"> {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; Ftps ftps = </span><span style="font-family: 'Courier New'; font-weight: bold;">new</span><span style="font-family: 'Courier New';"> Ftps(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;ftp.myserver.com&quot;</span><span style="font-family: 'Courier New';">,</span><span style="font-family: 'Courier New'; color: #000080;">&quot;jsmith&quot;</span><span style="font-family: 'Courier New';">,</span><span style="font-family: 'Courier New'; color: #000080;">&quot;secret&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// subscribe MyFtpAdapter to events published</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; ftps.addFtpListener(</span><span style="font-family: 'Courier New'; font-weight: bold;">new</span><span style="font-family: 'Courier New';"> MyFtpAdapter());&nbsp;&nbsp;&nbsp; </span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; ftps.connect();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; ftps.disconnect();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; }</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; </span><span style="font-family: 'Courier New'; font-weight: bold;">catch</span><span style="font-family: 'Courier New';">(Exception e) {</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp;&nbsp;&nbsp; e.printStackTrace();</span></p>
+<p><span style="font-family: 'Courier New';"> &nbsp;&nbsp; }</span></p>
+<p><span style="font-family: 'Courier New';">  }</span></p>
+<p><span style="font-family: 'Courier New';">}</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</body>
+</html>

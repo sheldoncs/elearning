@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?uploadingasciitextfiles.html"; }
+else { parent.quicksync('a2.1.6.3'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Uploading ASCII text files</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Uploading ASCII text files</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="uploadingbinaryfiles.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="uploadingmultiplefiles.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>To upload ASCII text files you must set the transfer mode to ASCII using the <span class="f_CodeExample">Ftp#setAscii</span> method. All files with relative paths will be uploaded from your current local directory. </p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// turn off auto transfer mode detection if enabled</span></p>
+<p><span style="font-family: 'Courier New';">ftp.setAuto(</span><span style="font-family: 'Courier New'; font-weight: bold;">false</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// set transfer mode to ASCII</span></p>
+<p><span style="font-family: 'Courier New';">ftp.setAscii();</span></p>
+<p><span style="font-family: 'Courier New';">&nbsp;</span></p>
+<p><span style="font-family: 'Courier New'; font-style: italic; color: #000080;">// upload all files in current local directory</span></p>
+<p><span style="font-family: 'Courier New';">ftp.mupload(</span><span style="font-family: 'Courier New'; color: #000080;">&quot;*.*&quot;</span><span style="font-family: 'Courier New';">);</span></p>
+<p><span style="font-size: 8pt; font-family: 'Courier New';">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: bold;">See also</span> </p>
+<p>&nbsp;</p>
+<p style="margin: 0px 0px 0px 13px;"><a href="settingyourlocaldirectoryftp.html">Setting your local directory</a></p>
+
+
+</body>
+</html>

@@ -1,0 +1,757 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<!-- saved from url=(0029)http://www.helpandmanual.com/ -->
+<head><script type="text/javascript" src="helpman_topicinit.js"></script>
+<!-- Redirect browser to frame page if page is not in the content frame. -->
+<script type="text/javascript">
+<!--
+if(top.frames.length==0) { top.location.href="index.html?scriptingcommands.html"; }
+else { parent.quicksync('a2.7.4'); }
+//-->
+</script>
+<script type="text/javascript" src="highlight.js"></script>
+   <title>Scripting commands</title>
+   <meta name="generator" content="Help & Manual">
+   <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+</head>
+
+
+  <!-- Redirect browser to index page if page is not in the content frame.
+       This script is only valid for regular HTML export -->
+
+
+<body bgcolor="#FFFFFF" onload="highlight();">
+<div id="hmpopupDiv" style="visibility:hidden; position:absolute; z-index:1000; "></div>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2" bgcolor="#E2E2E2">
+  <tr>
+    <td align="left">
+      <p class="p_Heading1"><span class="f_Heading1">Scripting commands</span></p>
+
+    </td>
+    <td align="right">
+     <font face="Arial" size="2">
+     <a href="introoverview.html"><img src="ico_nav_up.gif" border=0 alt="Top"></a>&nbsp;
+     <a href="commandlineoptions.html"><img src="ico_nav_back.gif" border=0 alt="Previous"></a>&nbsp;
+     <a href="commentsinscriptfiles.html"><img src="ico_nav_next.gif" border=0 alt="Next"></a>
+     </font>
+    </td>
+  </tr>
+</table>
+<br>
+
+<p>The following commands may be used in a script file when invoking File Transfer Command Line. </p>
+<p>&nbsp;</p>
+<p><a href="scriptingcommands.html#append">append</a></p>
+<p><a href="scriptingcommands.html#cd">cd</a></p>
+<p><a href="scriptingcommands.html#connect">connect</a></p>
+<p><a href="scriptingcommands.html#del">del</a></p>
+<p><a href="scriptingcommands.html#deldir">deldir</a></p>
+<p><a href="scriptingcommands.html#disconnect">disconnect</a></p>
+<p><a href="scriptingcommands.html#exec">exec</a></p>
+<p><a href="scriptingcommands.html#get">get</a></p>
+<p><a href="scriptingcommands.html#getdir">getdir</a></p>
+<p><a href="scriptingcommands.html#lcd">lcd</a></p>
+<p><a href="scriptingcommands.html#lcopy">lcopy</a></p>
+<p><a href="scriptingcommands.html#ldel">ldel</a></p>
+<p><a href="scriptingcommands.html#ldeldir">ldeldir</a></p>
+<p><a href="scriptingcommands.html#lmove">lmove</a></p>
+<p><a href="scriptingcommands.html#lrename">lrename</a></p>
+<p><a href="scriptingcommands.html#mget">mget</a></p>
+<p><a href="scriptingcommands.html#mode">mode</a></p>
+<p><a href="scriptingcommands.html#mput">mput</a></p>
+<p><a href="scriptingcommands.html#msg">msg</a></p>
+<p><a href="scriptingcommands.html#prompt">prompt</a> </p>
+<p><a href="scriptingcommands.html#promptmask">promptmask</a> </p>
+<p><a href="scriptingcommands.html#put">put</a></p>
+<p><a href="scriptingcommands.html#putdir">putdir</a></p>
+<p><a href="scriptingcommands.html#rename">rename</a></p>
+<p><a href="scriptingcommands.html#set">set</a> </p>
+<p><a href="scriptingcommands.html#setdebug">set debug</a></p>
+<p><a href="scriptingcommands.html#sethostname">set hostname</a></p>
+<p><a href="scriptingcommands.html#setlineterm">set lineterm</a></p>
+<p><a href="scriptingcommands.html#setlogfile">set logfile</a></p>
+<p><a href="scriptingcommands.html#setpassive">set passive</a></p>
+<p><a href="scriptingcommands.html#setpassword">set password</a></p>
+<p><a href="scriptingcommands.html#setprotocol">set protocol</a> </p>
+<p><a href="scriptingcommands.html#setport">set port</a></p>
+<p><a href="scriptingcommands.html#setprivatekey">set privatekey</a></p>
+<p><a href="scriptingcommands.html#setsecure">set secure</a></p>
+<p><a href="scriptingcommands.html#settimeout">set timeout </a></p>
+<p><a href="scriptingcommands.html#setusername">set username</a></p>
+<p><a href="scriptingcommands.html#wait">wait</a> </p>
+<p>&nbsp;</p>
+<p>The above commands are resevered words in the FTCL language and may not be used as variable names when using the <span class="f_CodeExample">set </span>or <span class="f_CodeExample">prompt </span>commands. </p>
+<p>&nbsp;</p>
+<p><span class="f_Example">Example</span></p>
+<p>&nbsp;</p>
+<p><span class="f_Note" style="font-style: italic; font-weight: normal;">Bad</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">prompt dir &quot;Enter directory name: &quot;</span></p>
+<p>&nbsp;</p>
+<p>The variable named <span class="f_CodeExample">&quot;dir&quot;</span> may not be used as this is a reserved word for use by the <span class="f_CodeExample">&quot;dir&quot;</span> command used to get a directory listing. </p>
+<p>&nbsp;</p>
+<p><span style="font-style: italic; color: #007f00;">Good</span></p>
+<p>&nbsp;</p>
+<p><span class="f_CodeExample">prompt mydir &quot;Enter directory name: &quot; </span></p>
+<p>&nbsp;</p>
+<p>The variable named <span class="f_CodeExample">&quot;mydir&quot;</span> is not a reserved word so may be used.</p>
+<p>&nbsp;</p>
+<div style="text-align: left; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table cellspacing="0" cellpadding="0" border="0" style="border: none; border-spacing:0px; border-collapse: collapse;">
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="append"></a><span class="f_CodeExample" style="font-weight: bold;">append</span><span class="f_CodeExample"> &quot;&lt;file&gt;&quot; [&quot;&lt;destination&gt;&quot;]</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Appends contents of local file to remote file with same name.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;file&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative filename or absolute path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;destination&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">optional quoted remote filename to append to</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">append &quot;log.txt&quot; &quot;mylog.txt&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">append &quot;log.txt&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="cd"></a><span class="f_CodeExample" style="font-weight: bold;">cd</span><span class="f_CodeExample"> &quot;&lt;directory&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Sets directory on remote server.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;directory&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative directory name or absolute path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">cd &quot;jsmith&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">cd &quot;/home/users/jsmith&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="connect"></a><span class="f_CodeExample" style="font-weight: bold;">connect</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Establishes connection with remote server.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="del"></a><span class="f_CodeExample" style="font-weight: bold;">del</span><span class="f_CodeExample"> &quot;&lt;file&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Deletes remote filename.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;file&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative filename or absolute path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">del &quot;logs.txt&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">del &quot;/home/user/logs.txt&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="deldir"></a><span class="f_CodeExample" style="font-weight: bold;">deldir</span><span class="f_CodeExample"> &quot;&lt;directory&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Deletes remote directory recursively</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;directory&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative directory name or absolute path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">deldir &quot;logs&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">deldir &quot;/home/users/jsmith/logs&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="disconnect"></a><span class="f_CodeExample" style="font-weight: bold;">disconnect</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Disconnects from remote server.</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="exec"></a><span class="f_CodeExample" style="font-weight: bold;">exec</span><span class="f_CodeExample"> &quot;&lt;command&gt; &quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Executes command on local machine. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;command&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">valid command to be interpreted by the local operating system.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">exec &quot;dir c:/tmp &gt; c:/tmp/dirout.txt&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext" style="font-weight: bold;">See also</span><span class="f_Notetext"> </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span class="f_Notetext"><a href="escapecharacters.html">Escape sequences</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="get"></a><span class="f_CodeExample" style="font-weight: bold;">get</span><span class="f_CodeExample"> &quot;&lt;file&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Downloads file from remote server.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;file&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative filename or absolute path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">get &quot;logs.txt&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="getdir"></a><span class="f_CodeExample" style="font-weight: bold;">getdir</span><span class="f_CodeExample"> &quot;&lt;directory&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Downloads directory recursively from remote server.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;directory&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative directory name or absolute path </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">getdir &quot;logs&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">getdir &quot;/var/logs&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="lcd"></a><span class="f_CodeExample" style="font-weight: bold;">lcd</span><span class="f_CodeExample"> &quot;&lt;directory&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Sets current working directory on local machine. This directory is used when uploading files using relative paths and when downloading files.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;directory&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted absolute path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">lcd &quot;c:/tmp&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext" style="font-weight: bold;">See also</span><span class="f_Notetext"> </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span class="f_Notetext"><a href="escapecharacters.html">Escape sequences</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="lcopy"></a><span class="f_CodeExample" style="font-weight: bold;">lcopy</span><span class="f_CodeExample"> &quot;&lt;path&gt;&quot; &quot;&lt;destination&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Copies a local file to a local destination.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;path&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative or absolute file or directory path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;destination&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative or absolute file or directory path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">lcopy &quot;logs.txt&quot; &quot;logs.txt.old&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">lcopy &quot;c:/tmp/logs.txt&quot; &quot;c:/tmp/logs.txt.old&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext" style="font-weight: bold;">See also</span><span class="f_Notetext"> </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span class="f_Notetext"><a href="escapecharacters.html">Escape sequences</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="ldel"></a><span class="f_CodeExample" style="font-weight: bold;">ldel</span><span class="f_CodeExample">&quot;&lt;file&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Deletes local filename.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;file&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative filename or absolute path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">ldel &quot;logs.txt&quot;</span><span class="f_Notetext"> </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">ldel &quot;c:/tmp/logs.txt&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext" style="font-weight: bold;">See also</span><span class="f_Notetext"> </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span class="f_Notetext"><a href="escapecharacters.html">Escape sequences</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="ldeldir"></a><span class="f_CodeExample" style="font-weight: bold;">ldeldir</span><span class="f_CodeExample"> &quot;&lt;directory&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Deletes local directory recursively</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;directory&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative directory name or absolute path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">ldeldir &quot;tmp&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">ldeldir &quot;c:/tmp&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext" style="font-weight: bold;">See also</span><span class="f_Notetext"> </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span class="f_Notetext"><a href="escapecharacters.html">Escape sequences</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="lmove"></a><span class="f_CodeExample" style="font-weight: bold;">lmove</span><span class="f_CodeExample"> &quot;&lt;path&gt;&quot; &quot;&lt;destination&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Moves a local file to a local destination.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;path&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative or absolute file or directory path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;destination&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative or absolute file or directory path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">move &quot;logs.txt&quot; &quot;archive/logs.txt&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">move &quot;c:/tmp/logs.txt&quot; &quot;c:/tmp/archive/logs.txt&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext" style="font-weight: bold;">See also </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span class="f_Notetext"><a href="escapecharacters.html">Escape sequences</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="lrename"></a><span class="f_CodeExample" style="font-weight: bold;">lrename</span><span class="f_CodeExample"> &quot;&lt;path&gt;&quot; &quot;&lt;destination&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Renames file on local machine.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;path&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative or absolute file or directory path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;destination&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative or absolute file or directory path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">lrename &quot;logs.txt&quot; &quot;logs.txt.old&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">lrename &quot;c:/tmp/logs.txt&quot; &quot;c:/tmp/logs.txt.old&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext" style="font-weight: bold;">See also</span><span class="f_Notetext"> </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span class="f_Notetext"><a href="escapecharacters.html">Escape sequences</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="mget"></a><span class="f_CodeExample" style="font-weight: bold;">mget</span><span class="f_CodeExample"> &quot;&lt;filter&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Downloads files from current remote directory matching filter.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;filter&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted regular expression</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">mget &quot;.*\\.txt&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="mode"></a><span class="f_CodeExample" style="font-weight: bold;">mode</span><span class="f_CodeExample"> &quot;&lt;mode&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Sets transfer mode to ASCII or binary.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;mode&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted transfer mode of &quot;ascii&quot; or &quot;binary&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">mode &quot;ascii&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="mput"></a><span class="f_CodeExample" style="font-weight: bold;">mput</span><span class="f_CodeExample"> &quot;&lt;filter&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Uploads local files in current working directory matching filter to remote server.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;filter&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted regular expression</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">mput &quot;.*\\.txt&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="msg"></a><span class="f_CodeExample" style="font-weight: bold;">msg</span><span class="f_CodeExample"> &quot;&lt;message&gt; &quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Sends message to current debugging stream. By default the console is the current debug stream and debugging is enabled.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">msg &quot;connecting to FTP server&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="prompt"></a><span class="f_CodeExample" style="font-weight: bold;">prompt</span><span class="f_CodeExample"> &lt;variablename&gt; &quot;&lt;prompt&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Prompts user to enter a value to be read from the command line and stores this value in the variable name used in the first argument. The value stored in this variable is then available for use later in the script. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">prompt username &quot;Enter username: &quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="promptmask"></a><span class="f_CodeExample" style="font-weight: bold;">promptmask</span><span class="f_CodeExample"> &lt;variablename&gt; &quot;&lt;prompt&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Prompts user to enter a value to be read from the command line and stores this value in the variable name used in the first argument. The value stored in this variable is then available for use later in the script. Value entered is masked to user. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">promptmask password &quot;Enter password: &quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="put"></a><span class="f_CodeExample" style="font-weight: bold;">put</span><span class="f_CodeExample"> &quot;&lt;file&gt;&quot; [&quot;&lt;destination&gt;&quot;]</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Uploads local file to remote server.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;file&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative filename or absolute path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;destination&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">optional quoted remote filename or absolute path to store file as </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">put &quot;c:/tmp/logs.txt&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">put &quot;c:/tmp/logs.txt&quot; &quot;mylogs.txt&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext" style="font-weight: bold;">See also</span><span class="f_Notetext"> </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span class="f_Notetext"><a href="escapecharacters.html">Escape sequences</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="putdir"></a><span class="f_CodeExample" style="font-weight: bold;">putdir</span><span class="f_CodeExample"> &quot;&lt;directory&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Uploads local directory recursively to remote server.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;directory&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative directory name or absolute path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">putdir &quot;logs&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">putdir &quot;c:/tmp/logs&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext" style="font-weight: bold;">See also</span><span class="f_Notetext"> </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span class="f_Notetext"><a href="escapecharacters.html">Escape sequences</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="rename"></a><span class="f_CodeExample" style="font-weight: bold;">rename</span><span class="f_CodeExample"> &quot;&lt;path&gt;&quot; &quot;&lt;destination&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Renames file on remote server.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;path&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative or absolute file or directory path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;destination&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a quoted relative or absolute file or directory path</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">rename &quot;logs.txt&quot; &quot;logs.txt.old&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">rename &quot;/var/logs/logs.txt&quot; &quot;/var/logs/logs.txt.old&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="set"></a><span class="f_CodeExample" style="font-weight: bold;">set</span><span class="f_CodeExample"> &lt;variablename&gt; &lt;value&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Creates a user defined variable for use within a script.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;variablename&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">A variable name used to reference the variable. Must begin with a letter, and may be followed by 0 or more letters or digits.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;value&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">The value the variable name represents. Valid values include boolean values of true or false, any valid integer or any quoted string.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set myNumberVariable 12</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set myBooleanVariable true</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set myStringVariable &quot;testing 1.2.3&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">Variables created may later be referenced using the ${&lt;variablename&gt;} notation.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set myNumberVariable 12</span></p>
+<p><span class="f_CodeExample">&nbsp;</span></p>
+<p><span class="f_CodeExample">msg &quot;value of myNumberVariable is: {myNumberVariable}&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="setdebug"></a><span class="f_CodeExample" style="font-weight: bold;">set debug</span><span class="f_CodeExample"> &lt;boolean&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies whether debugging is enabled or disabled. By default debugging is enabled and all debugging information is sent to the console.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;boolean&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">true, false </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set debug false</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="sethostname"></a><span class="f_CodeExample" style="font-weight: bold;">set hostname</span><span class="f_CodeExample"> &quot;&lt;hostname&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specified the hostname of the remote server. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;hostname&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a valid quoted hostname or IP address </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set hostname &quot;192.168.10.2&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="setlineterm"></a><span class="f_CodeExample" style="font-weight: bold;">set lineterm</span><span class="f_CodeExample"> &quot;&lt;lineterm&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specified the line termination to be used when performing ASCII transfers with SFTP/SSH servers that do not support ASCII transfers natively.&nbsp; FTCL will automatically convert source file, replacing local line terminators with specified line terminator.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;lineterm&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a valid quoted line terminator.&nbsp; Valid values include CR (carriage return) and LF (line-feed) or any combination thereof e.g. CRLF.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set lineterm &quot;LF&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="setlogfile"></a><span class="f_CodeExample" style="font-weight: bold;">set logfile</span><span class="f_CodeExample"> &quot;&lt;file&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies the path of the log file to write debug data to. By default all output is sent to the console.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;file&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a valid relative or absolute file path on local machine</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set logfile &quot;c:/tmp/log.txt&quot; </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext" style="font-weight: bold;">See also </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span class="f_Notetext"><a href="escapecharacters.html">Escape sequences</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="setpassive"></a><span class="f_CodeExample" style="font-weight: bold;">set passive</span><span class="f_CodeExample"> &lt;boolean&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies whether passive or active mode should be used in FTP/S protocols.&nbsp; Default is true.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;boolean&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">true, false</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set passive true</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="setpassword"></a><span class="f_CodeExample" style="font-weight: bold;">set password</span><span class="f_CodeExample"> &quot;&lt;password&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies the password to use when logging into the remote server. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;password&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a valid quoted password for specified username on remote server </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set password &quot;secret&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="setprotocol"></a><span class="f_CodeExample" style="font-weight: bold;">set protocol</span><span class="f_CodeExample"> &lt;protocol&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies the protocol to use when establishing a connection.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;protocol&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">the protocol to use. Valid options are &quot;ftp&quot;, &quot;ftps&quot;, &quot;ftps-auth-tls&quot;, &quot;ftps-auth-ssl&quot;, &quot;ftps-implicit&quot; and &quot;sftp&quot; for the protocols FTP, FTP over SSL (AUTH SSL), FTP over SSL (Implicit SSL) and SFTP (FTP over SSH) respectively. Default protocol is &quot;ftp&quot;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Note">Note</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 48px 0px 48px;"><span class="f_Notetext">When using &quot;ftps-implicit&quot; setting you must set the port to the server port responsible for handling implicit SSL connections.&nbsp; This is typically handled on port 990.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set protocol &quot;ftps-auth-tls&quot;</span></p>
+<p><span class="f_CodeExample">&nbsp;</span></p>
+<p><span class="f_Notetext" style="font-weight: bold;">See also</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p style="margin: 0px 0px 0px 13px;"><span class="f_Notetext"><a href="scriptingcommands.html#setport">set port</a></span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="setport"></a><span class="f_CodeExample" style="font-weight: bold;">set port</span><span class="f_CodeExample"> &lt;port&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies the port of the remote server. The default ports for FTP and SFTP protocols are 21 and 22 respectively.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;port&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">A valid integer between 1-65535</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set port 2021</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="setprivatekey"></a><span class="f_CodeExample" style="font-weight: bold;">set privatekey</span><span class="f_CodeExample"> &quot;&lt;file&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies the path of private key file to use when authenticating with SFTP server. Valid for use in SFTP protocol only. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;file&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a valid relative or absolute file path on local machine</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set privatekey &quot;c:/ssh/keys/id_dsa&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="setsecure"></a><span class="f_CodeExample" style="font-weight: bold;">set secure</span><span class="f_CodeExample"> &lt;boolean&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies that the secure SFTP protocol be used. FTP protocol is used by default. Requires that SSH version 2.0 or above be installed on remote server and SFTP be enabled. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;boolean&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">true, false</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set secure true</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="settimeout"></a><span class="f_CodeExample" style="font-weight: bold;">set timeout</span><span class="f_CodeExample"> &lt;seconds&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Sets the maximum timeout used when establishing a connection, sending data or receiving data. If timeout is exceeded script will abort. Default value is 60 seconds. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;seconds&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">the maximum number of seconds to wait </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set timeout 30</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="setusername"></a><span class="f_CodeExample" style="font-weight: bold;">set username</span><span class="f_CodeExample"> &quot;&lt;username&gt;&quot;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Specifies the username to use when logging into the remote server. </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;username&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">a valid quoted username for remote server </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">set username &quot;jsmith&quot;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><a name="wait"></a><span class="f_CodeExample" style="font-weight: bold;">wait</span><span class="f_CodeExample"> &lt;seconds&gt;</span></p>
+</td>
+<td valign="top" width="439px" style="width:439px; border: solid 1px #000000;"><p><span class="f_Notetext">Pauses execution of script for specified number of seconds.</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">&lt;seconds&gt;</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Notetext">the number of seconds to wait </span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_Example">Example</span></p>
+<p><span class="f_Notetext">&nbsp;</span></p>
+<p><span class="f_CodeExample">wait 5</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+
+</body>
+</html>
